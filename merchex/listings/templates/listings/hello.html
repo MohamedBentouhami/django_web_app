@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merchex</title>
-</head>
-
-<body>
-    <h1>Hello Django !</h1>
+{% extends 'listings/base.html' %}
+{%block content%}   
+<h2>Hello Django !</h2>
     <p>My favourites groups are : </p>
     <ul>
         {% if bands|length == 0 %}
@@ -22,10 +13,4 @@
         {%endfor%}
         {%endif%}
     </ul>
-
-
-
-
-</body>
-
-</html>
+{%endblock%}
