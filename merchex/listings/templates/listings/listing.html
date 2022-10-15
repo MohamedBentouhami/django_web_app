@@ -1,4 +1,4 @@
-{% extends 'listings/base.html' %}
+{% extends 'base.html' %}
 {%block content%}  
     <p>The favourite listings are : </p>
     {%if listings|length == 0 %}
@@ -7,7 +7,7 @@
     <ul>
         {%for listing in listings %}
         <li>
-            {{listing.title|upper}}
+            <a href="{% url 'listing-detail' listing.id %}">{{listing.title|upper}}</a>
         </li>
         {%endfor%}
     </ul>

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Title : {{listing.title}}</h2>
+<ul>
+    {%if listing.band %}
+    <li>Band : {{listing.band}}</li>
+    {% endif %}
+    <li>Year : {{listing.year}}</li>
+    <li>Type : {{listing.get_type_display}}</li>
+</ul>
+<p>{{listing.description}}</p>
+
+<a href="{% url 'listing-list' %}">Return to other listings</a>
+
+{%endblock%}

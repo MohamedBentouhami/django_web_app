@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{%block content%}   
+<h2>Groupes :</h2>
+    <ul>
+        {% if bands|length == 0 %}
+        <p>No favorite band</p>
+        {%else%}
+        {% for band in bands %}
+        <li>
+           <a href="{% url 'band-detail' band.id %}">{{band.name|upper}}</a>
+           
+        </li>   
+        {%endfor%}
+        {%endif%}
+
+        {%for listing in band.listing_set.all %}
+        <a>listing</a>
+        {%endfor%}
+    </ul>
+{%endblock%}
