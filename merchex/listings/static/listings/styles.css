@@ -1,7 +1,52 @@
 html{
-    background-color: antiquewhite;
+    background-color: #409acb;
 }
 
 .errorlist{
     margin-bottom: -10px;
+}
+
+.title{
+    grid-area: header;
+    background-color: #034f84;
+    text-align: center;
+    color: white;
+}
+
+.menu{
+    grid-area: menu;
+    background-color: #409acb;
+    padding: 2em;
+    border: 2px solid black;
+}
+
+.main{
+    grid-area: main;
+}
+
+.link{
+    color: white;
+    padding-right: 1em;
+    text-decoration: none;
+    margin: 1em;
+    
+}
+
+.link:hover{
+    background-color: orange;
+}
+
+a:link{
+    text-decoration : none;
+}
+a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+.updateBtn{
+    background-color: violet;
+}
+.createBtn{
+    background-color: green;
 }

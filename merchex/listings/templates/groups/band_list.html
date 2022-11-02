@@ -1,22 +1,31 @@
 {% extends 'base.html' %}
-{%block content%}   
+{%block content%}
 <h2>Groupes :</h2>
-    <ul>
-        {% if bands|length == 0 %}
-        <p>No favorite band</p>
-        {%else%}
-        {% for band in bands %}
-        <li>
-           <a href="{% url 'band-detail' band.id %}">{{band.name|upper}}</a>
-           
-        </li>   
-        {%endfor%}
-        {%endif%}
+<table>
+    {% if bands|length == 0 %}
+    <p>No favorite band</p>
+    {%else%}
+    {% for band in bands %}
+    <tr>
+        <td>
+            <a href="{% url 'band-detail' band.id %}">{{band.name|upper}}</a>
+        </td>
+        <td>
+            <button class="updateBtn">
+                <a href="{% url 'band-update' band.id %}">modifier</a>
+            </button>
+        </td>
+    </tr>
+    {%endfor%}
+    {%endif%}
 
-        {%for listing in band.listing_set.all %}
-        <a>listing</a>
-        {%endfor%}
-    </ul>
+    {%for listing in band.listing_set.all %}
+    <a>listing</a>
+    {%endfor%}
+</table>
+<br>
 
+<button class="createBtn">
     <a href="{% url 'band-create'%}">Create a new group</a>
-{%endblock%}
+    {%endblock%}
+</button>

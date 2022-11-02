@@ -25,6 +25,11 @@ def band_create(request):
 
     return render(request,'groups/band_create.html',{'form':form})
 
+def band_update(request,id):
+    band = Band.objects.get(id=id)
+    form = BandForm(instance=band)
+    return render(request,'groups/band_update.html',{'form':form})
+
 def about(request):
     return render(request,'about.html')
 
